@@ -49,7 +49,7 @@ const Slider = () => {
                     })}
                 </div>
                 <div>
-                    <button className='bg-white rounded-full absolute top-[50%] right-4 p-2 hover:bg-green-300'
+                    <button className='duration-300 bg-white rounded-full absolute top-[50%] right-4 p-2 hover:bg-green-300 ease-in-out'
                         onClick={() => dispatch(nextSlide(slideIndex + 1))}>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +65,7 @@ const Slider = () => {
                             />
                         </svg>
                     </button>
-                    <button className='bg-white rounded-full absolute top-[50%] left-4 p-2 hover:bg-green-300'
+                    <button className='duration-300 bg-white rounded-full absolute top-[50%] left-4 p-2 hover:bg-green-300 ease-in-out'
                         onClick={() => dispatch(prevSlide(slideIndex - 1))}>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
