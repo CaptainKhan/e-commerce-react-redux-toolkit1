@@ -8,7 +8,7 @@ import { sliderData } from '../../../src/assets/data/dummyData'
 
 const Slider = () => {
     const slideIndex = useSelector((state) => state.slider.value);
-    console.log('slideIndex', slideIndex)
+    // console.log('slideIndex', slideIndex)
     const dispatch = useDispatch()
 
     return (
