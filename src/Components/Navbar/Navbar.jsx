@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from '../../assets/images/logo.png'
+import Cart from '../Cart/Cart'
+import { useSelector } from 'react-redux'
 
 const Navbar = () => {
+    const totalAmount = useSelector((state) => state.cart.totalAmount)
+    const [open, setOpen] = useState(false);
+
+    const handleOpen = () => {
+        setOpen(true)
+    };
     return (
         <>
             <div className="bg-black p-2 w-full">
@@ -27,9 +35,12 @@ const Navbar = () => {
                             />
                         </svg>
                         <p className='font-inter text-base font-medium tracking-normal leading-none text-center mr-2'>Whish List</p>
-
                     </div>
-                    <div className='flex flex-row items-center cursor-pointer'>
+                    <div
+                        className='flex flex-row items-center cursor-pointer'
+                        onClick={handleOpen}
+                    >
+                        {totalAmount > 0 ? <span className='rounded-full bg-gray-300 px-2 font-inter text-sm mr-1 '>{totalAmount}</span> : null}
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none" viewBox="0 0 24 24"
@@ -40,6 +51,9 @@ const Navbar = () => {
                             />
                         </svg>
                         <p className='font-inter text-base font-medium tracking-normal leading-none text-center mr-2'>Shopping Bag</p>
+                        <div>
+                            {open && <Cart openModal={open} setOpen={setOpen}></Cart>}
+                        </div>
                     </div>
                 </div>
             </div>
