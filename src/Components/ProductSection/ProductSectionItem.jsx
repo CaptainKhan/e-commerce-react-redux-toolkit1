@@ -6,8 +6,8 @@ import {
     CardFooter,
     Typography,
     Tooltip,
+    Button
 } from "@material-tailwind/react";
-import { Button } from "@material-tailwind/react";
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../features/slices/cartSlice';
 
